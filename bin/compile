@@ -56,6 +56,7 @@ for BUILDPACK in $(cat $1/.buildpacks); do
       fi
 
       # check if the buildpack left behind an environment for subsequent ones
+      echo "Is there an exported environment at $dir/export?"
       if [ -e $dir/export ]; then
         echo "=====> Loading the exported environment from $dir/export"
         source $dir/export
